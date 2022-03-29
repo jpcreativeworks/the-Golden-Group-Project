@@ -1,1 +1,28 @@
-/* this test */
+:root {
+    --font-body-family:var(--font-body-family): sans-serif;
+    --font-body-style:var(--font-body-style): normal;
+    --font-heading-family:var(--font-heading-family): 'brush-script-mt-italic', sans-serif;
+    --background-color:var(--background-color): rgb(170, 2, 2);
+    --font-color:var(--font-color): #ffff;
+
+
+}
+}
+
+body {
+    font-family: 
+    display: block;
+}
+
+.navbar {
+    background-color: #ffff;
+    font-color: black;
+}
+
+.nav-link {
+    background-color: white;
+}
+
+.nav-link:hover {
+    
+}
