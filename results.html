@@ -5,47 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-        <link rel="stylesheet" href="./assets/style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css"/>
 </head>
 <body>
     <header>
         <h1>Shady Pines Cinema</h1>
-        <nav class="navbar">
-          <div>
-            <ul>
-              <li>
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#">Watchlist</a>
-              </li>
-            </ul>
-          </div>
+        <img src="" alt="">
+        <nav class="breadcrumb is-right" aria-label="breadcrumbs">
+          <ul>
+            <li><a id="home" href="#">Home</a></li>
+            <li><a id="about" href="#">About</a></li>
+            <li><a id="watchlist" href="#">Watchlist</a></li>
+          </ul>
+        </nav>
     </header>
     <main>
         <section>
             <div>
               <h2>Search your favorite movies!</h2>
               <form>
-                <input type="text" placeholder="Title">
-                <input placeholder="Actor" type="text">
+                <input id="title" type="text" placeholder="Title">
+                <input id = "actor" placeholder="Actor" type="text">
                 <select>
-                  <option value="" disable selected>Genre</option>
-                  <option>Action</option>
-                  <option>Comedy</option>
-                  <option>Thriller</option>
-                  <option>Horror</option>
-                  <option>Sci-Fi</option>
+                    <option id="genre" value="" disable selected>Genre</option>
+                    <option>Comedy</option>
+                    <option>Sci-Fi</option>
+                    <option>Horror</option>
+                    <option>Romance</option>
+                    <option>Action</option>
+                    <option>Thriller</option>
+                    <option>Animation</option>
+                    <option>Fantasy</option>
                 </select>
                 <select>
-                  <option value="" disabled selected>Ratings</option>
-                  <option>4 to 5 stars, Top Rated</option>
-                  <option>3 stars and above</option>
-                  <option>All ratings</option>
+                    <option id="ratings" value="" disabled selected>Ratings</option>
+                    <option>8 to 10, Top Rated</option>
+                    <option>6 to 7 and above</option>
+                    <option>5 and below</option>
                 </select>
                 <button>Search!</button>
               </form>
@@ -57,12 +54,9 @@
                 <li></li>
             </ul>
         </section>
-
     </main>
 
     <script src="./assets/script.js"></script>
     <script src="./assets/api.js"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
 </body>
 </html>
