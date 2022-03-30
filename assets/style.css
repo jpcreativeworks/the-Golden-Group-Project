@@ -38,3 +38,8 @@ body {
 li :hover {
     background-color: rgba(182, 182, 182, 0.178);
 }
+
+p.control.is-expanded :focus-visible {
+    border: solid 1px rgb(153, 2, 2);
+    outline-color: solid 1px rgb(245, 166, 77);
+}
