@@ -6,7 +6,7 @@ function handleSearchFormSubmit(event) {
   let titleInputVal = document.querySelector('#title').value;
   let actorInputVal = document.querySelector('#actor').value;
   let genreInputVal = document.querySelector("#genre").value;
-  let ratingInputVal = document.querySelector("#rating").value;
+  let ratingInputVal = document.querySelector("#ratings").value;
 
   let queryString = './results.html?q=' + titleInputVal + '&actor=' + actorInputVal + "&genre=" + genreInputVal + "&rating=" + ratingInputVal;
 
