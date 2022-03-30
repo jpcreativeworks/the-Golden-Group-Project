@@ -11,5 +11,5 @@ function printResults(resultObj) {
     titleEL.textContent = resultObj.title;
 
     let bodyContentEl = document.createElement("p");
-   // bodyContentEl.innerHTML = 
+    //bodyContentEl.innerHTML = 
 }
