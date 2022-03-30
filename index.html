@@ -14,7 +14,7 @@
         <article class="media">
             <figure class="media-left">
                 <!-- added padding to manipulate the image.dorothy -->
-              <p class="image px-4 mx-6 is-64x64">
+              <p class="image is-flex px-4 mx-6 is-64x64">
                 <img src="./assets/images/spc-vector-logo.png" id="spc-logo" alt="Shady Pines Cinema Logo">
               </p>
             </figure>    
@@ -37,12 +37,11 @@
    <main>
        <!-- made the classes for bulma syntax to form the search card.dorothy -->
     <section class="section has-background-danger-dark" style="padding-top: 0px;">
-      <div class="container">
+      <div class="container columns is-full is-12">
           
         <!-- created a div to define the column wrap.dorothy -->
-        <div class="colums is-8 is-var">
+        <div class="column is-4">
             <!-- added a div to define the size of the card on different devices.dorothy -->
-            <div class="column is-4-tablet is-3-desktop">
                 <!-- created a div class of card for bulma css syntax.dorothy -->
                 <div class="card py-4 px-4">
                     <form id="form">
@@ -84,20 +83,19 @@
                         </div>
                       </form>
                 </div>
+        </div>
+
+        <div class="column is-8">
+            <div class="content">
+                <h2>Welcome!</h2>
+                    <p>Shady Pines Cinema is a movie resource for everyone! Search your by your favorite movies and favorite actors. Not sure what to pick? Explore genres and movie ratings! Add your search results to your personal Watchlist!</p>
             </div>
         </div>
-        
       </div>
+      
   </section>
   <section>
-    <div>
-      <h2>Welcome!</h2>
-      <p>Shady Pines Cinema is a movie resource for everyone!</p>
-      <p>Search your by your favorite movies and favorite actors.</p>
-      <p>Not sure what to pick? Explore genres and movie ratings!</p>
-      <p>Add your search results to your personal Watchlist!</p>
-    </div>
-    <div>
+
         <!-- centered h2 w has phrase and gave it subtitle styling, gave this class an id.dorothy -->
       <h2 id="about-us" class="subtitle has-text-centered">About the Golden Group Project</h2>
       <!-- added padding around the text using section pharse.dorothy-->
@@ -105,8 +103,8 @@
     </div>
     <section>
   </main>
-
+<!-- romoved api js file.blanche -->
     <script src="./assets/script.js"></script>
-    <script src="./assets/api.js"></script>
+    
 </body>
 </html>
