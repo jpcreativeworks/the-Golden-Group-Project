@@ -14,15 +14,32 @@ body {
     display: block;
 }
 
-.navbar {
-    background-color: #ffff;
+#spc-logo {
+    /* height: 173px; */
+    /* width: 242px; */
+    position: absolute;
+    padding-bottom: 10px;
+}
+
+.image.is-64x64 {
+    height: 120px;
+    width: 343px;
+}
+
+.breadcrumb {
+    background-color: rgb(255, 255, 255);
     font-color: black;
 }
 
 .nav-link {
     background-color: white;
 }
+/* nav hover react */
+li :hover {
+    background-color: rgba(182, 182, 182, 0.178);
+}
 
-.nav-link:hover {
-    
+p.control.is-expanded :focus-visible {
+    border: solid 1px rgb(153, 2, 2);
+    outline-color: solid 1px rgb(245, 166, 77);
 }
