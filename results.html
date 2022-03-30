@@ -9,45 +9,85 @@
     <link rel="stylesheet" href="./assets/style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Shady Pines Cinema</h1>
-        <img src="" alt="">
-        <nav class="breadcrumb is-right" aria-label="breadcrumbs">
+    <!-- added a section here for the logo image to live in used bulma syling to add color and spacing.dorothy -->
+    <section class="secton has-background-danger-dark has-text-danger-dark"> SPC
+        <article class="media">
+            <figure class="media-left">
+                <!-- added padding to manipulate the image.dorothy -->
+              <p class="image px-4 mx-6 is-64x64">
+                <img src="./assets/images/spc-vector-logo.png" id="spc-logo" alt="Shady Pines Cinema Logo">
+              </p>
+            </figure>    
+        </article>
+    </section>
+    <!-- updated header class w bulma css styling.dorothy -->
+    <header class="has-background-danger-dark">                     
+        <nav class="breadcrumb is-right px-4 py-4" aria-label="breadcrumbs">
           <ul>
-            <li><a id="home" href="#">Home</a></li>
-            <li><a id="about" href="#">About</a></li>
-            <li><a id="watchlist" href="#">Watchlist</a></li>
+          <!-- added the text color and centering within their li container with bulma styling in the class.dorothy -->
+            <li><a id="home" class="has-text-danger-dark has-text-centered" href="./index.html">Home</a></li>
+            <li><a id="about" class="has-text-danger-dark has-text-centered" href="#about-us">About</a></li>
+            <li><a id="watchlist" class="has-text-danger-dark has-text-centered" href="./watchlist.html">Watchlist</a></li>
           </ul>
         </nav>
     </header>
+    <section class="section has-background-danger-dark"></section>
+
     <main>
-        <section>
-            <div>
-              <h2>Search your favorite movies!</h2>
-              <form>
-                <input id="title" type="text" placeholder="Title">
-                <input id = "actor" placeholder="Actor" type="text">
-                <select>
-                    <option id="genre" value="" disable selected>Genre</option>
-                    <option>Comedy</option>
-                    <option>Sci-Fi</option>
-                    <option>Horror</option>
-                    <option>Romance</option>
-                    <option>Action</option>
-                    <option>Thriller</option>
-                    <option>Animation</option>
-                    <option>Fantasy</option>
-                </select>
-                <select>
-                    <option id="ratings" value="" disabled selected>Ratings</option>
-                    <option>8 to 10, Top Rated</option>
-                    <option>6 to 7 and above</option>
-                    <option>5 and below</option>
-                </select>
-                <button>Search!</button>
-              </form>
-            </div>
-        </section>
+            <!-- made the classes for bulma syntax to form the search card.dorothy -->
+    <section class="section has-background-danger-dark" style="padding-top: 0px;">
+        <div class="container">
+            
+          <!-- created a div to define the column wrap.dorothy -->
+          <div class="colums is-8 is-var">
+              <!-- added a div to define the size of the card on different devices.dorothy -->
+              <div class="column is-4-tablet is-3-desktop">
+                  <!-- created a div class of card for bulma css syntax.dorothy -->
+                  <div class="card py-4 px-4">
+                      <form id="form">
+                          <!-- added bulma css to define the search card header.dorothy -->
+                          <h2 class="card-header-title has-text-centered is-size-4">Search for your favorite movies!</h2>
+                          <!-- updated imput w/ css bulma syntax.dorothy -->
+                          <input id="title" class="input is-warning hsl(245, 166%, 77%)" type="text" placeholder="Title">
+                          <input id="actor" class="input is-warning hsl(245, 166%, 77%) py-3 my-3"  type="text" placeholder="Actor">
+                          <!-- added two div w bulma css class styling for rating.dorothy -->
+                          <div class="control">
+                              <div class="select is-warning hsl(245, 166%, 77%)">
+                                  <select>
+                                    <option id="ratings" value="" disabled selected>Rating</option>
+                                    <option value="8 to 10, Top Rated">8 to 10, Top Rated</option>
+                                    <option value="6 to 7 and above">6 to 7 and above</option>
+                                    <option value="5 and below">5 and below</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <!-- added two divs and classes to change the bulma css values of the drop.dorothy -->
+                          <div class="control">
+                              <div class="select is-warning hsl(245, 166%, 77%) my-3">
+                                  <select>
+                                    <option id="genre" value="" disable selected>Genre</option>
+                                    <option value="Comedy">Comedy</option>
+                                    <option value="Sci-Fi">Sci-Fi</option>
+                                    <option value="Horror">Horror</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Thriller">Thriller</option>
+                                    <option value="Animation">Animation</option>
+                                    <option value="Fantasy">Fantasy</option>
+                                  </select>
+                              </div>
+                          </div>
+                            <!-- added bulma css syntax to give attributes to the button.dorothy -->
+                          <div class="buttons">
+                              <button class="button is-warning is-light is-outlined-warning-dark">SEARCH</button>
+                          </div>
+                        </form>
+                  </div>
+              </div>
+          </div>
+          
+        </div>
+    </section>
         <section>
             <h2>Search Results:</h2>
             <ul>
@@ -56,7 +96,8 @@
         </section>
     </main>
 
-    <script src="./assets/script.js"></script>
+    <!-- added script js api-2.rose -->
     <script src="./assets/api.js"></script>
+    <script src="./assets/api-2.js"></script>
 </body>
 </html>
