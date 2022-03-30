@@ -19,11 +19,13 @@ body {
     /* width: 242px; */
     position: absolute;
     padding-bottom: 10px;
+    display: flexbox;
 }
 
 .image.is-64x64 {
     height: 120px;
     width: 343px;
+    display: flexbox;
 }
 
 .breadcrumb {
