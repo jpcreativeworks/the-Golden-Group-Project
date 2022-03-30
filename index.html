@@ -9,19 +9,32 @@
     <link rel="stylesheet" href="./assets/style.css"/>
 </head>
 <body>
-  <header>
-      <h1>Shady Pines Cinema</h1>
-      <img src="" alt="">
-    <nav class="breadcrumb is-right" aria-label="breadcrumbs">
+    <!-- added a section here for the logo image to live in used bulma syling to add color and spacing .dorothy -->
+    <section class="secton has-background-danger-dark has-text-danger-dark"> SPC
+        <article class="media">
+            <figure class="media-left">
+                <!-- added padding to manipulate the image.dorothy -->
+              <p class="image px-4 mx-6 is-64x64">
+                <img src="./assets/images/spc-vector-logo.png" id="spc-logo" alt="Shady Pines Cinema Logo">
+              </p>
+            </figure>    
+        </article>
+    </section>
+  <header class="has-background-danger-dark">
+      <!-- <h1>Shady Pines Cinema</h1> commented this out because the logo will take its place, added image src, added padding using syling syntax.dorothy-->
+    <nav class="breadcrumb is-right px-4 py-4" aria-label="breadcrumbs">
       <ul>
-        <li><a id="home" href="#">Home</a></li>
-        <li><a id="about" href="#">About</a></li>
-        <li><a id="watchlist" href="#">Watchlist</a></li>
+          <!-- added the text color with bulma stylin in class.dorothy -->
+        <li><a id="home" class="has-text-danger-dark has-text-centered" href="./index.html">Home</a></li>
+        <li><a id="about" class="has-text-danger-dark has-text-centered" href="#about-us">About</a></li>
+        <li><a id="watchlist" class="has-text-danger-dark has-text-centered" href="./watchlist.html">Watchlist</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <section>
+  <!-- empty section temp.dorothy -->
+  <section class="section has-background-danger-dark"></section>
+   <main>
+    <section class="has-background-danger-dark">
       <div>
         <h2>Search your favorite movies!</h2>
         <form id="form">
@@ -58,8 +71,10 @@
       <p>Add your search results to your personal Watchlist!</p>
     </div>
     <div>
-      <h2>About the Golden Group Project</h2>
-      <p>About Shady Pines Cinema and the Golden Group Project.</p>
+        <!-- centered h2 w has phrase and gave it subtitle styling, gave this class an id.dorothy -->
+      <h2 id="about-us" class="subtitle has-text-centered">About the Golden Group Project</h2>
+      <!-- added padding around the text using section pharse.dorothy-->
+      <p class="section">About Shady Pines Cinema and the Golden Group Project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque corrupti consectetur quibusdam rerum perspiciatis autem nihil fugiat velit consequatur? Deserunt impedit omnis eos consequuntur provident molestias natus eligendi excepturi minus perspiciatis. Odio voluptatum corporis magni fuga beatae atque repellat obcaecati minima dignissimos, adipisci illo nesciunt temporibus est nisi soluta!</p>
     </div>
     <section>
   </main>
