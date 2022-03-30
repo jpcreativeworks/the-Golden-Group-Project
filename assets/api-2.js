@@ -12,6 +12,8 @@ function printResults(resultObj) {
 
     let bodyContentEl = document.createElement("p");
     //bodyContentEl.innerHTML = 
+
+    resultContentEl.append(endCard)
 }
 
 var searchFormEl = document.querySelector('#form');
@@ -37,6 +39,9 @@ function handleSearchFormSubmit(event) {
   }
 
   location.assign(queryString);
+
+  
 }
 
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+searchFormEl.addEventListener('submit', handleSearchFormSubmit, printResults);
+
