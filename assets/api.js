@@ -28,27 +28,47 @@ const options = {
 	}
 };
 
-{fetch ('https://data-imdb1.p.rapidapi.com/titles/search/title/%7Btitle%7D?info=mini_info&limit=10&page=1&titleType=movie', options)
+function getTitleinfo() {
+fetch ('https://data-imdb1.p.rapidapi.com/titles/search/title/%7Btitle%7D?info=mini_info&limit=10&page=1&titleType=movie', options)
 	.then(responseTitle => responseTitle.json())
-	.then(responseTitle => console.log(responseTitle))
+	.then(responseTitle => {
+		localStorage.setItem('titleInfo', JSON.stringify(responseTitle))
+		console.log(responseTitle)
+	})
 	.catch(err => console.error(err))
 }
 
-{fetch('https://data-imdb1.p.rapidapi.com/actors?limit=10&page=1', options)
+function getActorinfo() {
+fetch('https://data-imdb1.p.rapidapi.com/actors?limit=10&page=1', options)
 .then(responseActor => responseActor.json())
-.then(responseActor => console.log(responseActor))
+.then(responseActor => {
+	localStorage.setItem('actorInfo', JSON.stringify(responseActor))
+	console.log(responseActor)
+})
 .catch(err => console.error(err));
 }
 
-{fetch('https://data-imdb1.p.rapidapi.com/titles/tt0000002/ratings', options)
+function getRatinginfo() {
+fetch('https://data-imdb1.p.rapidapi.com/titles/tt0000002/ratings', options)
 	.then(responseRating => responseRating.json())
-	.then(responseRating => console.log(responseRating))
+	.then(responseRating => {
+		localStorage.setItem('ratingInfo', JSON.stringify(responseRating))
+		console.log(responseRating)
+	})
 	.catch(err => console.error(err));
 }
 
-{fetch('https://data-imdb1.p.rapidapi.com/titles/utils/genres', options)
+function getGenreinfo() {
+fetch('https://data-imdb1.p.rapidapi.com/titles/utils/genres', options)
 	.then(responseGenre => responseGenre.json())
-	.then(responseGenre => console.log(responseGenre))
+	.then(responseGenre => {
+		localStorage.setItem('genreInfo', JSON.stringify(responseGenre))
+		console.log(responseGenre)
+	})
 	.catch(err => console.error(err));
 }
 
+getTitleinfo()
+getActorinfo()
+getRatinginfo()
+getGenreinfo()
