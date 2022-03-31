@@ -1,6 +1,82 @@
 //We want to display movies on the search screen based on the info that we get when we search the json that the user is choosing to search
 
-let titleSearch = document.querySelector('#title')
+let titleSubmitButton = document.querySelector("#title-search");
+let actorSubmitButton = document.querySelector("#actor-search");
+let ratingSubmitButton = document.querySelector("#rating-search");
+let genreSubmitButton = document.querySelector("#genre-search");
+let resultContent = document.querySelector("#result-content");
+let resultsTitle = document.querySelector("#results-title")
+let resultsActor = document.querySelector("#results-actor")
+let resultsRating = document.querySelector("#results-rating")
+let resultsGenre = document.querySelector("#results-genre")
+let resultsDescription = document.querySelector("#results-discription")
+let titleInputVal = document.querySelector('#title').value;
+
+function printResults() {
+	let searchParamsArr = document.location.search.split('=').pop();
+    
+}
+
+// function getParams() {
+    
+//     let searchParamsArr = document.location.search.split('=').pop();
+    
+//   }
+
+function titleSearchFormSubmit() {
+	
+    let titleInputVal = document.querySelector('#title').value;
+ console.log(titleInputVal)
+    let queryString = "./results.html?q=" + titleInputVal;
+    location.assign(queryString);
+	printResults()
+}
+titleSubmitButton.onclick = function() {
+	
+	let titleInputVal = document.querySelector('#title').value;
+ console.log(titleInputVal)
+      let queryString = "./results.html?q=" + titleInputVal;
+      location.assign(queryString);
+	  
+}
+
+ printResults()
+// getParams()
+
+function actorSearchFormSubmit(event) {
+    event.preventDefault();
+    let actorInputVal = document.querySelector('#actor').value;
+
+    let queryString = "./results.html?q=" + actorInputVal;
+
+    location.assign(queryString);
+}
+actorSubmitButton.onclick = actorSearchFormSubmit
+
+
+function ratingSearchFormSubmit(event) {
+    event.preventDefault();
+    let ratingInputVal = document.querySelector('#ratings').value;
+
+    let queryString = "./results.html?q=" + ratingInputVal;
+
+    location.assign(queryString);
+}
+ratingSubmitButton.onclick = ratingSearchFormSubmit;
+
+
+function genreSearchFormSubmit(event) {
+    event.preventDefault();
+    let genreInputVal = document.querySelector('#genre').value;
+
+    let queryString = "./results.html?q=" + genreInputVal;
+
+    location.assign(queryString);
+}
+genreSubmitButton.onclick = genreSearchFormSubmit
+
+
+
 let actorSearch = document.querySelector('#actor')
 let genreSelect = document.querySelector('#genre')
 let ratingSelect = document.querySelector('#ratings')
@@ -19,7 +95,9 @@ actorUrl = 'https://data-imdb1.p.rapidapi.com/actors?limit=10&page=1'
 ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/tt0000002/ratings'
 genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres'
 
-function getTitleInfo(titleSearch) {
+function getTitleInfo() {
+	let titleSearch = document.location.search.split('=').pop();
+	console.log(titleSearch)
 	let titleUrl = 'https://data-imdb1.p.rapidapi.com/titles/search/keyword/' + titleSearch + '?info=mini_info&limit=10&page=1&titleType=movie'
 	fetch(titleUrl, options)
 		.then(responseTitle => responseTitle.json())
@@ -42,7 +120,7 @@ function getActorInfo() {
 }
 
 function getRatingInfo() {
-	let ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/' + ratingSearch + '/ratings'
+	let ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/' + ratingSelect + '/ratings'
 	fetch(ratingUrl, options)
 		.then(responseRating => responseRating.json())
 		.then(responseRating => {
@@ -53,7 +131,7 @@ function getRatingInfo() {
 }
 
 function getGenreInfo() {
-	let genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres/' + genreSearch
+	let genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres/' + genreSelect
 	fetch(genreUrl, options)
 		.then(responseGenre => responseGenre.json())
 		.then(responseGenre => {
@@ -62,3 +140,8 @@ function getGenreInfo() {
 		})
 		.catch(err => console.error(err));
 }
+
+// getGenreInfo();
+// getRatingInfo();
+ getTitleInfo()
+// getActorInfo();

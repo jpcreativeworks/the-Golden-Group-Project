@@ -1,54 +1,73 @@
-let resultContentEl = document.querySelector('#result-content');
+// let titleSubmitButton = document.querySelector("#title-search");
+// let actorSubmitButton = document.querySelector("#actor-search");
+// let ratingSubmitButton = document.querySelector("#rating-search");
+// let genreSubmitButton = document.querySelector("#genre-search");
+// let resultContent = document.querySelector("#result-content");
 
-function printResults(resultObj) {
-    console.log(resultObj);
-    let endCard = document.createElement("div");
+// function printResults() {
+//     let resultsTitle = document.querySelector("#results-title")
+//     let resultsActor = document.querySelector("#results-actor")
+//     let resultsRating = document.querySelector("#results-rating")
+//     let resultsGenre = document.querySelector("#results-title")
+//     let resultsDescription = document.querySelector("#results-discription")
+//     let titleInputVal = document.querySelector('#title').value;
 
-    let endBody = document.createElement("div");
-    endCard.append(endBody);
+//     resultsTitle.textContent = titleInputVal
 
-    let bodyContentEl = document.createElement("p");
-    bodyContentEl.innerHTML =
-        'Title: ' + resultObj.title + '<br/>';
+// }
 
-    bodyContentEl.innerHTML +=
-        'Actors: ' + resultObj.actor.join(', ') + '<br/>';
+// function getParams() {
+    
+//     let searchParamsArr = document.location.search.split('=').pop();
+//     let titleInput = document.querySelector('#title').value;
+//     //let title = searchParamsArr.split('=').pop();
+//     titleInput.textContent = searchParamsArr
+//     console.log(searchParamsArr)
+//   }
 
-    bodyContentEl.innerHTML +=
-        'Genre: ' + resultObj.genre.join(', ') + '<br/>';
+// function titleSearchFormSubmit(event) {
+//    // event.preventDefault();
+//     let titleInputVal = document.querySelector('#title').value;
 
-    bodyContentEl.innerHTML +=
-        'IMDB Score: ' + resultObj.rating + '<br/>';
+//     let queryString = "./results.html?q=" + titleInputVal;
+//     location.assign(queryString);
 
-endBody.append(bodyContentEl);
-}
+// }
+// titleSubmitButton.onclick = function() {
+//     titleSearchFormSubmit();
+//     getParams()
+// }
 
-var searchFormEl = document.querySelector('#form');
 
-function handleSearchFormSubmit(event) {
-    event.preventDefault();
 
-    let titleInputVal = document.querySelector('#title').value;
-    let actorInputVal = document.querySelector('#actor').value;
-    let genreInputVal = document.querySelector("#genre").value;
-    let ratingInputVal = document.querySelector("#ratings").value;
+// function actorSearchFormSubmit(event) {
+//     event.preventDefault();
+//     let actorInputVal = document.querySelector('#actor').value;
 
-    let queryString = './results.html?q=' + titleInputVal + '&actor=' + actorInputVal + "&genre=" + genreInputVal + "&rating=" + ratingInputVal;
+//     let queryString = "./results.html?q=" + actorInputVal;
 
-    if (titleInputVal == null) {
-        queryString = "./results.html?q=" + actorInputVal + "&genre=" + genreInputVal + "&rating=" + ratingInputVal;
-    } else if (actorInputVal == null) {
-        queryString = "./results.html?q=" + titleInputVal + "&genre=" + genreInputVal + "&rating=" + ratingInputVal;
-    } else if (genreInputVal == null) {
-        queryString = "./results.html?q=" + titleInputVal + "&actor=" + actorInputVal + "&rating=" + ratingInputVal;
-    } else if (ratingInputVal == null) {
-        queryString = "./results.html?q=" + titleInputVal + "&actor=" + actorInputVal + "&genre=" + genreInputVal;
-    }
+//     location.assign(queryString);
+// }
+// actorSubmitButton.onclick = actorSearchFormSubmit
 
-    location.assign(queryString);
- printResults()
 
-}
+// function ratingSearchFormSubmit(event) {
+//     event.preventDefault();
+//     let ratingInputVal = document.querySelector('#ratings').value;
 
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+//     let queryString = "./results.html?q=" + ratingInputVal;
 
+//     location.assign(queryString);
+// }
+// ratingSubmitButton.onclick = ratingSearchFormSubmit;
+
+
+// function genreSearchFormSubmit(event) {
+//     event.preventDefault();
+//     let genreInputVal = document.querySelector('#genre').value;
+
+//     let queryString = "./results.html?q=" + genreInputVal;
+
+//     location.assign(queryString);
+// }
+// genreSubmitButton.onclick = genreSearchFormSubmit
