@@ -6,18 +6,6 @@ let genreSelect = document.querySelector('#genre')
 let ratingSelect = document.querySelector('#ratings')
 let searchBox = document.querySelector('#form')
 
-function getSelect() {
-	let searchSelectArr = document.location.search.split('&');
-	let titleVal = searchSelectArr[0].split('=').pop();
-	let actorVal = searchSelectArr[1].split('=').pop();
-	let genreVal = searchSelectArr[2].split('=').pop();
-	let searchVal = searchSelectArr[3].split('=').pop();
-	searchMovies(titleVal, actorVal, genreVal, searchVal);
-};
-
-// function searchMovies(titleVal, actorVal, genreVal, searchVal) {
-// }
-
 const options = {
 	method: 'GET',
 	headers: {
@@ -32,7 +20,7 @@ ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/tt0000002/ratings'
 genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres'
 
 function getTitleInfo(titleSearch) {
-	let titleUrl = 'https://data-imdb1.p.rapidapi.com/titles/search/keyword/' +  '%7Btitle%7D' +'?info=mini_info&limit=10&page=1&titleType=movie'
+	let titleUrl = 'https://data-imdb1.p.rapidapi.com/titles/search/keyword/' + titleSearch + '?info=mini_info&limit=10&page=1&titleType=movie'
 	fetch(titleUrl, options)
 		.then(responseTitle => responseTitle.json())
 		.then(responseTitle => {
@@ -43,6 +31,7 @@ function getTitleInfo(titleSearch) {
 }
 
 function getActorInfo() {
+	let actorUrl = 'https://data-imdb1.p.rapidapi.com/actors/' + actorSearch + '?limit=10&page=1'
 	fetch(actorUrl, options)
 		.then(responseActor => responseActor.json())
 		.then(responseActor => {
@@ -53,6 +42,7 @@ function getActorInfo() {
 }
 
 function getRatingInfo() {
+	let ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/' + ratingSearch + '/ratings'
 	fetch(ratingUrl, options)
 		.then(responseRating => responseRating.json())
 		.then(responseRating => {
@@ -63,6 +53,7 @@ function getRatingInfo() {
 }
 
 function getGenreInfo() {
+	let genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres/' + genreSearch
 	fetch(genreUrl, options)
 		.then(responseGenre => responseGenre.json())
 		.then(responseGenre => {
