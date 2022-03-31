@@ -9,7 +9,7 @@ let resultsTitle = document.querySelector("#results-title")
 let resultsActor = document.querySelector("#results-actor")
 let resultsRating = document.querySelector("#results-rating")
 let resultsGenre = document.querySelector("#results-genre")
-let resultsDescription = document.querySelector("#results-discription")
+let resultsDescription = document.querySelector("#results-description")
 let titleInputVal = document.querySelector('#title').value;
 
 function printResults() {
@@ -75,13 +75,6 @@ function genreSearchFormSubmit(event) {
 }
 genreSubmitButton.onclick = genreSearchFormSubmit
 
-
-
-let actorSearch = document.querySelector('#actor')
-let genreSelect = document.querySelector('#genre')
-let ratingSelect = document.querySelector('#ratings')
-let searchBox = document.querySelector('#form')
-
 const options = {
 	method: 'GET',
 	headers: {
@@ -109,6 +102,7 @@ function getTitleInfo() {
 }
 
 function getActorInfo() {
+	let actorSearch = document.location.search.split("=").pop();
 	let actorUrl = 'https://data-imdb1.p.rapidapi.com/actors/' + actorSearch + '?limit=10&page=1'
 	fetch(actorUrl, options)
 		.then(responseActor => responseActor.json())
@@ -120,6 +114,7 @@ function getActorInfo() {
 }
 
 function getRatingInfo() {
+	let ratingSelect = document.location.search.split("=").pop();
 	let ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/' + ratingSelect + '/ratings'
 	fetch(ratingUrl, options)
 		.then(responseRating => responseRating.json())
@@ -131,6 +126,7 @@ function getRatingInfo() {
 }
 
 function getGenreInfo() {
+	let genreSelect = document.location.search.split("=").pop();
 	let genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres/' + genreSelect
 	fetch(genreUrl, options)
 		.then(responseGenre => responseGenre.json())
