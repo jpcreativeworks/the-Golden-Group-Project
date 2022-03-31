@@ -4,50 +4,41 @@ let ratingSubmitButton = document.querySelector("#rating-search");
 let genreSubmitButton = document.querySelector("#genre-search");
 let resultContent = document.querySelector("#result-content");
 
-// function printResults() {
-
-//     let endCard = document.createElement("div");
-
-//     let endBody = document.createElement("div");
-
-//     let bodyContentEl = document.createElement("p");
-//     bodyContentEl.textContent =
-//         'Title: ' + title + '<br/>';
-
-//     bodyContentEl.innerHTML +=
-//         'Actors: ' + actor.join(', ') + '<br/>';
-
-//     bodyContentEl.innerHTML +=
-//         'IMDB Score: ' + rating + '<br/>';
-
-//     bodyContentEl.innerHTML +=
-//         'Genre: ' + genre.join(', ') + '<br/>';
-
-//     endBody.append(bodyContentEl);
-
-//     endCard.append(endBody);
-
-//     resultContent.append(endCard)
-
-// }
-
-// printResults()
-
 function printResults() {
-    
+    let resultsTitle = document.querySelector("#results-title")
+    let resultsActor = document.querySelector("#results-actor")
+    let resultsRating = document.querySelector("#results-rating")
+    let resultsGenre = document.querySelector("#results-title")
+    let resultsDescription = document.querySelector("#results-discription")
+    let titleInputVal = document.querySelector('#title').value;
+
+    resultsTitle.textContent = titleInputVal
+
 }
 
+function getParams() {
+    
+    let searchParamsArr = document.location.search.split('=').pop();
+    let titleInput = document.querySelector('#title').value;
+    //let title = searchParamsArr.split('=').pop();
+    titleInput.textContent = searchParamsArr
+    console.log(searchParamsArr)
+  }
+
 function titleSearchFormSubmit(event) {
-    event.preventDefault();
+   // event.preventDefault();
     let titleInputVal = document.querySelector('#title').value;
 
     let queryString = "./results.html?q=" + titleInputVal;
-
     location.assign(queryString);
 
-
 }
-titleSubmitButton.onclick = titleSearchFormSubmit
+titleSubmitButton.onclick = function() {
+    titleSearchFormSubmit();
+    getParams()
+}
+
+
 
 function actorSearchFormSubmit(event) {
     event.preventDefault();
@@ -59,6 +50,7 @@ function actorSearchFormSubmit(event) {
 }
 actorSubmitButton.onclick = actorSearchFormSubmit
 
+
 function ratingSearchFormSubmit(event) {
     event.preventDefault();
     let ratingInputVal = document.querySelector('#ratings').value;
@@ -68,6 +60,7 @@ function ratingSearchFormSubmit(event) {
     location.assign(queryString);
 }
 ratingSubmitButton.onclick = ratingSearchFormSubmit;
+
 
 function genreSearchFormSubmit(event) {
     event.preventDefault();

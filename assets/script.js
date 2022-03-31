@@ -8,6 +8,7 @@ let actorSubmitButton = document.querySelector("#actor-search");
 let ratingSubmitButton = document.querySelector("#rating-search");
 let genreSubmitButton = document.querySelector("#genre-search");
 
+
 function titleSearchFormSubmit(event) {
   event.preventDefault();
   let titleInputVal = document.querySelector('#title').value;

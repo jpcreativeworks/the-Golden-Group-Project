@@ -76,3 +76,79 @@ getTitleInfo()
 getActorInfo()
 getRatingInfo()
 getGenreInfo()
+
+let titleSubmitButton = document.querySelector("#title-search");
+let actorSubmitButton = document.querySelector("#actor-search");
+let ratingSubmitButton = document.querySelector("#rating-search");
+let genreSubmitButton = document.querySelector("#genre-search");
+let resultContent = document.querySelector("#result-content");
+let resultsTitle = document.querySelector("#results-title")
+let resultsActor = document.querySelector("#results-actor")
+let resultsRating = document.querySelector("#results-rating")
+let resultsGenre = document.querySelector("#results-genre")
+let resultsDescription = document.querySelector("#results-discription")
+let titleInputVal = document.querySelector('#title').value;
+
+function printResults() {
+	let searchParamsArr = document.location.search.split('=').pop();
+    let titlePTag = document.createElement("p");
+	titlePTag.textContent = searchParamsArr;
+	resultsTitle.append(titlePTag)
+}
+
+function getParams() {
+    
+    let searchParamsArr = document.location.search.split('=').pop();
+    
+  }
+
+function titleSearchFormSubmit() {
+	
+    let titleInputVal = document.querySelector('#title').value;
+ console.log(titleInputVal)
+    let queryString = "./results.html?q=" + titleInputVal;
+    location.assign(queryString);
+	printResults()
+}
+titleSubmitButton.onclick = function(event) {
+	event.preventDefault();
+	let titleInputVal = document.querySelector('#title').value;
+ console.log(titleInputVal)
+      let queryString = "./results.html?q=" + titleInputVal;
+      location.assign(queryString);
+}
+
+printResults()
+getParams()
+
+function actorSearchFormSubmit(event) {
+    event.preventDefault();
+    let actorInputVal = document.querySelector('#actor').value;
+
+    let queryString = "./results.html?q=" + actorInputVal;
+
+    location.assign(queryString);
+}
+actorSubmitButton.onclick = actorSearchFormSubmit
+
+
+function ratingSearchFormSubmit(event) {
+    event.preventDefault();
+    let ratingInputVal = document.querySelector('#ratings').value;
+
+    let queryString = "./results.html?q=" + ratingInputVal;
+
+    location.assign(queryString);
+}
+ratingSubmitButton.onclick = ratingSearchFormSubmit;
+
+
+function genreSearchFormSubmit(event) {
+    event.preventDefault();
+    let genreInputVal = document.querySelector('#genre').value;
+
+    let queryString = "./results.html?q=" + genreInputVal;
+
+    location.assign(queryString);
+}
+genreSubmitButton.onclick = genreSearchFormSubmit
