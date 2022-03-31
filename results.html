@@ -42,7 +42,7 @@
           <div class="column is-5">
                   <!-- created a div class of card for bulma css syntax.dorothy -->
                   <div class="card py-4 px-4">
-                      <form id="form">
+                      <form id="title-form">
                           <!-- added bulma css to define the search card header.dorothy -->
                           <h2 class="card-header-title has-text-centered is-size-6">Choose ONE to search for your favorite movies or maybe discover a new one!</h2>
                           <!-- updated imput w/ css bulma syntax.dorothy -->
@@ -57,6 +57,8 @@
                                 </div>
                                 
                         </div>
+                        </form>
+                        <form id="actor-form">
                         <div class="field has-addons">
                             <div class="control">
                                <input id="actor" class="input is-warning hsl(245, 166%, 77%) py-3 my-3"  type="text" placeholder="Actor">
@@ -65,8 +67,9 @@
                                 <!-- the seach button for actor.dorothy -->
                                 <a id="actor-search" class="button is-info is-warning is-light is-outlined-warning-dark is-right py-3 my-3">SEARCH</a>
                             </div>
-
                         </div>
+                        </form>
+                        <form id="rating-form">
                         <!-- added two div w bulma css class styling for rating.dorothy -->
                         <div class="field has-addons">
                             <div class="control">
@@ -81,10 +84,12 @@
                             </div>
                             <div class="control">
                                 <!-- the seach button for rating.dorothy -->
-                                <a id="actor-search" class="button is-info is-warning is-light is-outlined-warning-dark is-left">SEARCH</a>
+                                <a id="rating-search" class="button is-info is-warning is-light is-outlined-warning-dark is-left">SEARCH</a>
                             </div>
                         </div>
+                        </form>
                         <!-- added two divs and classes to change the bulma css values of the drop.dorothy -->
+                        <form id="genre-form">
                         <div class="field has-addons">
                             <div class="control">
                                 <div class="select is-warning hsl(245, 166%, 77%) my-3">
@@ -139,7 +144,10 @@
                     </div>
     </section>
     </main>
-  
+    <footer>
+        <p>Developed by Jenn, Brant, Lawson, and Samantha.</p>
+        <p>https://github.com/jpcreativeworks/the-Golden-Group-Project.git</p>
+    </footer>
     <script src="./assets/api.js"></script>
     <script src="./assets/api-2.js"></script>
 </body>
