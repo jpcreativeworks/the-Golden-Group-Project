@@ -1,6 +1,4 @@
-//I want this Javascript to take the search parameters from the URL
-//and search through the IMDB-API and place the results into the
-//HTML as information that can be displayed for the user to see
+//We want to display movies on the search screen based on the info that we get when we search the json that the user is choosing to search
 
 let titleSearch = document.querySelector('#title')
 let actorSearch = document.querySelector('#actor')
@@ -9,12 +7,12 @@ let ratingSelect = document.querySelector('#ratings')
 let searchBox = document.querySelector('#form')
 
 function getSelect() {
-    let searchSelectArr = document.location.search.split('&');
-    let titleVal = searchSelectArr[0].split('=').pop();
-    let actorVal = searchSelectArr[1].split('=').pop();
-    let genreVal = searchSelectArr[2].split('=').pop();
-    let searchVal = searchSelectArr[3].split('=').pop();
-    searchMovies(titleVal, actorVal, genreVal, searchVal);
+	let searchSelectArr = document.location.search.split('&');
+	let titleVal = searchSelectArr[0].split('=').pop();
+	let actorVal = searchSelectArr[1].split('=').pop();
+	let genreVal = searchSelectArr[2].split('=').pop();
+	let searchVal = searchSelectArr[3].split('=').pop();
+	searchMovies(titleVal, actorVal, genreVal, searchVal);
 };
 
 // function searchMovies(titleVal, actorVal, genreVal, searchVal) {
@@ -28,47 +26,53 @@ const options = {
 	}
 };
 
-function getTitleinfo() {
-fetch ('https://data-imdb1.p.rapidapi.com/titles/search/title/%7Btitle%7D?info=mini_info&limit=10&page=1&titleType=movie', options)
-	.then(responseTitle => responseTitle.json())
-	.then(responseTitle => {
-		localStorage.setItem('titleInfo', JSON.stringify(responseTitle))
-		console.log(responseTitle)
-	})
-	.catch(err => console.error(err))
+titleUrl = 'https://data-imdb1.p.rapidapi.com/titles/search/keyword/%7Bkeyword%7D?info=mini_info&limit=10&page=1&titleType=movie'
+actorUrl = 'https://data-imdb1.p.rapidapi.com/actors?limit=10&page=1'
+ratingUrl = 'https://data-imdb1.p.rapidapi.com/titles/tt0000002/ratings'
+genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres'
+
+function getTitleInfo(titleSearch) {
+	let titleUrl = 'https://data-imdb1.p.rapidapi.com/titles/search/keyword/' +  '%7Btitle%7D' +'?info=mini_info&limit=10&page=1&titleType=movie'
+	fetch(titleUrl, options)
+		.then(responseTitle => responseTitle.json())
+		.then(responseTitle => {
+			localStorage.setItem('titleInfo', JSON.stringify(responseTitle))
+			console.log(responseTitle)
+		})
+		.catch(err => console.error(err))
 }
 
-function getActorinfo() {
-fetch('https://data-imdb1.p.rapidapi.com/actors?limit=10&page=1', options)
-.then(responseActor => responseActor.json())
-.then(responseActor => {
-	localStorage.setItem('actorInfo', JSON.stringify(responseActor))
-	console.log(responseActor)
-})
-.catch(err => console.error(err));
+function getActorInfo() {
+	fetch(actorUrl, options)
+		.then(responseActor => responseActor.json())
+		.then(responseActor => {
+			localStorage.setItem('actorInfo', JSON.stringify(responseActor))
+			console.log(responseActor)
+		})
+		.catch(err => console.error(err));
 }
 
-function getRatinginfo() {
-fetch('https://data-imdb1.p.rapidapi.com/titles/tt0000002/ratings', options)
-	.then(responseRating => responseRating.json())
-	.then(responseRating => {
-		localStorage.setItem('ratingInfo', JSON.stringify(responseRating))
-		console.log(responseRating)
-	})
-	.catch(err => console.error(err));
+function getRatingInfo() {
+	fetch(ratingUrl, options)
+		.then(responseRating => responseRating.json())
+		.then(responseRating => {
+			localStorage.setItem('ratingInfo', JSON.stringify(responseRating))
+			console.log(responseRating)
+		})
+		.catch(err => console.error(err));
 }
 
-function getGenreinfo() {
-fetch('https://data-imdb1.p.rapidapi.com/titles/utils/genres', options)
-	.then(responseGenre => responseGenre.json())
-	.then(responseGenre => {
-		localStorage.setItem('genreInfo', JSON.stringify(responseGenre))
-		console.log(responseGenre)
-	})
-	.catch(err => console.error(err));
+function getGenreInfo() {
+	fetch(genreUrl, options)
+		.then(responseGenre => responseGenre.json())
+		.then(responseGenre => {
+			localStorage.setItem('genreInfo', JSON.stringify(responseGenre))
+			console.log(responseGenre)
+		})
+		.catch(err => console.error(err));
 }
 
-getTitleinfo()
-getActorinfo()
-getRatinginfo()
-getGenreinfo()
+getTitleInfo()
+getActorInfo()
+getRatingInfo()
+getGenreInfo()
