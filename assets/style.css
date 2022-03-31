@@ -22,11 +22,11 @@ body {
     display: flexbox;
 }
 
-.image.is-64x64 {
+/* .image.is-64x64 {
     height: 120px;
     width: 343px;
     display: flexbox;
-}
+} */
 
 .breadcrumb {
     background-color: rgb(255, 255, 255);
@@ -45,3 +45,24 @@ p.control.is-expanded :focus-visible {
     border: solid 1px rgb(153, 2, 2);
     outline-color: solid 1px rgb(245, 166, 77);
 }
+
+.image {
+    height: 120px;
+    width: 343px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+}
+
+@media screen and (max-width: 652px){
+    .image {
+        height: 80px;
+        width: 114px;
+        top: 52px;
+        padding: 0;
+        margin: 0;
+    }
+} 
+  
