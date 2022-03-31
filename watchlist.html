@@ -33,71 +33,155 @@
     </nav>
   </header>
   <!-- empty section temp.dorothy -->
-  <section class="section has-background-danger-dark"></section>
+  <section class="section has-background-danger-dark">
+    <div>
+        <h1 class="title-context has-text-white has-text-weight-bold mb-10 has-text-centered">Your Watchlist:</h1>
+    </div>
+  </section>
     <main>
            <!-- made the classes for bulma syntax to form the search card.dorothy -->
     <section class="section has-background-danger-dark" style="padding-top: 0px;">
-        <div class="container">
+        <!-- started with columns (plurle) to define the row per css styling.dorothy -->
+        <div class="container columns is-full is-12">
             
-          <!-- created a div to define the column wrap.dorothy -->
-          <div class="colums is-8 is-var">
+          <!-- created a div to define the column correctly.dorothy -->
+          <div class="column is-5">
               <!-- added a div to define the size of the card on different devices.dorothy -->
-              <div class="column is-4-tablet is-3-desktop">
+              <!-- removed div class, unnesscary, also can't spell sorry.dorothy -->
                   <!-- created a div class of card for bulma css syntax.dorothy -->
                   <div class="card py-4 px-4">
-                      <form id="form">
+                      <form id="watchlist-form">
                           <!-- added bulma css to define the search card header.dorothy -->
-                          <h2 class="card-header-title has-text-centered is-size-4">Search for your favorite movies!</h2>
-                          <!-- updated imput w/ css bulma syntax.dorothy -->
-                          <input id="title" class="input is-warning hsl(245, 166%, 77%)" type="text" placeholder="Title">
-                          <input id="actor" class="input is-warning hsl(245, 166%, 77%) py-3 my-3"  type="text" placeholder="Actor">
-                          <!-- added two div w bulma css class styling for rating.dorothy -->
-                          <div class="control">
-                              <div class="select is-warning hsl(245, 166%, 77%)">
-                                  <select id="ratings">
-                                    <option  value="" disabled selected>Rating</option>
-                                    <option value="8 to 10, Top Rated">8 to 10, Top Rated</option>
-                                    <option value="6 to 7 and above">6 to 7 and above</option>
-                                    <option value="5 and below">5 and below</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <!-- added two divs and classes to change the bulma css values of the drop.dorothy -->
-                          <div class="control">
-                              <div class="select is-warning hsl(245, 166%, 77%) my-3">
-                                  <select id="genre">
-                                    <option  value="" disable selected>Genre</option>
-                                    <option value="Comedy">Comedy</option>
-                                    <option value="Sci-Fi">Sci-Fi</option>
-                                    <option value="Horror">Horror</option>
-                                    <option value="Romance">Romance</option>
-                                    <option value="Action">Action</option>
-                                    <option value="Thriller">Thriller</option>
-                                    <option value="Animation">Animation</option>
-                                    <option value="Fantasy">Fantasy</option>
-                                  </select>
-                              </div>
-                          </div>
-                            <!-- added bulma css syntax to give attributes to the button.dorothy -->
-                          <div class="buttons">
-                              <button class="button is-warning is-light is-outlined-warning-dark">SEARCH</button>
-                          </div>
-                        </form>
-                  </div>
-              </div>
-          </div>
+                          <h2 class="card-header-title has-text-centered is-size-6">Choose ONE to search for your
+                            favorite movies or maybe discover a new one!</h2>
+                          <!-- from the index html copied the updated bulma css text for search components.dorothy -->
+                          <div class="field has-addons">
+                            <div class="control">
+                                <input id="title" class="input is-warning hsl(245, 166%, 77%)" type="text"
+                                    placeholder="Title">
+                            </div>
+                            <div class="control">
+                                <!-- the search button for title.dorothy -->
+                                <a id="title-search"
+                                    class="button is-info is-warning is-light is-outlined-warning-dark is-right">SEARCH</a>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="actor-form">
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input id="actor" class="input is-warning hsl(245, 166%, 77%) py-3 my-3" type="text"
+                                    placeholder="Actor">
+                            </div>
+                            <div class="control">
+                                <!-- the seach button for actor.dorothy -->
+                                <a id="actor-search"
+                                    class="button is-info is-warning is-light is-outlined-warning-dark is-right py-3 my-3">SEARCH</a>
+                            </div>
+                    </form>
+                </div>
+                <form id="rating-form">
+                
+                <!-- added two div w bulma css class styling for rating.dorothy -->
+                <div class="field has-addons">
+                    <div class="control">
+                        <div class="select is-warning hsl(245, 166%, 77%)">
+                            <select id="ratings" name="Rating">
+                                <option value="" disabled selected>Rating</option>
+                                <option value="8 to 10, Top Rated">8 to 10, Top Rated</option>
+                                <option value="6 to 7 and above">6 to 7 and above</option>
+                                <option value="5 and below">5 and below</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <!-- the seach button for rating.dorothy -->
+                        <a id="rating-search"
+                            class="button is-info is-warning is-light is-outlined-warning-dark is-left">SEARCH</a>
+                    </div>
+                </div>
+                </form>
+                <!-- added two divs and classes to change the bulma css values of the drop.dorothy -->
+                <form id="genre-form">
+                <div class="field has-addons">
+                    <div class="control">
+                        <div class="select is-warning hsl(245, 166%, 77%) my-3">
+                            <select id="genre" name="Genres">
+                                <option value="" disable selected>Genre</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Sci-Fi">Sci-Fi</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Action">Action</option>
+                                <option value="Thriller">Thriller</option>
+                                <option value="Animation">Animation</option>
+                                <option value="Fantasy">Fantasy</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <a id="genre-search" class="button is-info is-warning is-light is-outlined-warning-dark is-left my-3">SEARCH</a>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        
+
+        <div class="columns is-fullwidth">
+            <div class="block section">
+              <article class="message is-info is-warning is-outlined-warning-dark">
+                <div class="message-header has-text-warning-dark">
+                  Title:
+                  <h1 id="watchlist-title"></h1>
+                  <button class="delete"></button>
+                </div>
+                <div class="message-body is-warning is-light ">
+                    <ul>
+                        <li id="results-actors">Actors:<br></li>
+                        <li id="results-genre">Genre:<br> </li>
+                        <li id="results-rating">Rating:<br> </li>
+                        <li id="results-description">Description:<br> </li>
+                    </ul> 
+                    
+                </div>               
+              </article>
+              <!-- replaced with info card above.dorothy -->
+                <!-- <div id="watchlist-container" class="has-background-white">
+                    <div class="is-fullwidth">
+                        <div class="media-left column-1 ">
+
+                        </div>
+                        <article id="favorites-list-container" class="media">
+                            <div id="watchlist-content" class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <h2 id="results-title" class="strong is-text-weight-bold">Test Title</h2> 
+                                        <ul>
+                                            <li id="results-actors">Actors:<br></li>
+                                            <li id="results-genre">Genre:<br> </li>
+                                            <li id="results-rating">Rating:<br> </li>
+                                            <li id="results-description">Description:<br> </li>
+                                        </ul>
+                                    //watched button.dorothy
+                                    <button id="watched-button" class="button level-right is-rounded is-warning is-light is-outlined-warning-dark my-5">Remove</button>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </article> -->
+                        <!-- <h2 class="has-text-white"> the Test</h2> -->
+                    </div>
+                </div>
           
         </div>
     </section>
-        <section>
-            <h2>Watchlist</h2>
-            <h3>Watched:</h3>
-            <ul>
-                <li></li>
-            </ul>
-        </section>
+        
     </main>
-
+    <footer>
+      <p>Developed by Jenn, Brant, Lawson, and Samantha.</p>
+      <p>https://github.com/jpcreativeworks/the-Golden-Group-Project.git</p>
+    </footer>
     <script src="./assets/script.js"></script>
     <script src="./assets/api.js"></script>
 </body>
