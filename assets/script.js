@@ -48,3 +48,4 @@ function genreSearchFormSubmit(event) {
   location.assign(queryString);
 }
 genreSubmitButton.onclick = genreSearchFormSubmit
+
