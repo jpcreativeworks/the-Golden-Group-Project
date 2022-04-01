@@ -91,8 +91,8 @@ genreUrl = 'https://data-imdb1.p.rapidapi.com/ts/utilitles/genres'
 function getTitleInfo() {
 	let titleSearch = document.location.search.split('=').pop();
 	console.log(titleSearch)
-	let titleUrl = 'https://data-imdb1.p.rapidapi.com/titles/search/keyword/' + titleSearch + '?info=mini_info&limit=10&page=1&titleType=movie'
-	fetch(titleUrl, options)
+	let titleUrl = 'https://www.omdbapi.com/?t=' + titleSearch + "&apikey=7ffe113a";
+	fetch(titleUrl)
 		.then(responseTitle => responseTitle.json())
 		.then(responseTitle => {
 			localStorage.setItem('titleInfo', JSON.stringify(responseTitle))

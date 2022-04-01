@@ -87,10 +87,17 @@
                     <div class="control">
                         <div class="select is-warning hsl(245, 166%, 77%)">
                             <select id="ratings" name="Rating">
-                                <option value="" disabled selected>Rating</option>
-                                <option value="8 to 10, Top Rated">8 to 10, Top Rated</option>
-                                <option value="6 to 7 and above">6 to 7 and above</option>
-                                <option value="5 and below">5 and below</option>
+                              <option value="" disable selected>Genre</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
                             </select>
                         </div>
                     </div>
@@ -129,12 +136,12 @@
         
 
         <div class="columns is-fullwidth">
-            <div class="block section">
+            <div class="block section watchlist-boxx">
               <article class="message is-info is-warning is-outlined-warning-dark">
                 <div class="message-header has-text-warning-dark">
                   Title:
                   <h1 id="watchlist-title"></h1>
-                  <button class="delete"></button>
+                  <button class="delete watchlist-remover"></button>
                 </div>
                 <div class="message-body is-warning is-light ">
                     <ul>
@@ -143,44 +150,30 @@
                         <li id="results-rating">Rating:<br> </li>
                         <li id="results-description">Description:<br> </li>
                     </ul> 
-                    
                 </div>               
               </article>
-              <!-- replaced with info card above.dorothy -->
-                <!-- <div id="watchlist-container" class="has-background-white">
-                    <div class="is-fullwidth">
-                        <div class="media-left column-1 ">
-
-                        </div>
-                        <article id="favorites-list-container" class="media">
-                            <div id="watchlist-content" class="media-content">
-                                <div class="content">
-                                    <p>
-                                        <h2 id="results-title" class="strong is-text-weight-bold">Test Title</h2> 
-                                        <ul>
-                                            <li id="results-actors">Actors:<br></li>
-                                            <li id="results-genre">Genre:<br> </li>
-                                            <li id="results-rating">Rating:<br> </li>
-                                            <li id="results-description">Description:<br> </li>
-                                        </ul>
-                                    //watched button.dorothy
-                                    <button id="watched-button" class="button level-right is-rounded is-warning is-light is-outlined-warning-dark my-5">Remove</button>
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </article> -->
-                        <!-- <h2 class="has-text-white"> the Test</h2> -->
-                    </div>
-                </div>
+            </div>
+         </div>
           
         </div>
     </section>
         
     </main>
-    <footer>
-      <p>Developed by Jenn, Brant, Lawson, and Samantha.</p>
-      <p>https://github.com/jpcreativeworks/the-Golden-Group-Project.git</p>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong><a href="https://github.com/jpcreativeworks/the-Golden-Group-Project.git">The Golden Group</a></strong>
+          Developed by:
+          <a href="https://github.com/jpcreativeworks">Jenn Bencriscutto, </a>
+          <a href="https://github.com/SamanthaLord22">Samantha Lord, </a>
+          <a href="https://github.com/BrantMartin">Brant Martin, </a>
+          and <a href="https://github.com/LawsonSV">Lawson Vanderpool.</a>
+          </p>
+          <p>
+          The source code is licensed
+          <a href="https://rapidapi.com/SAdrian/api/data-imdb1/details">Data-Imdb</a> by <a href="https://rapidapi.com/SAdrian/api/data-imdb1/details#:~:text=By-,Adriano%20Massimo,-%7C%20Updated%20a%20month">Adriano Massimo</a>. 
+        </p>
+      </div>
     </footer>
     <script src="./assets/script.js"></script>
     <script src="./assets/api.js"></script>
