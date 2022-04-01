@@ -17,4 +17,4 @@ function titleSearchFormSubmit(event) {
 
   location.assign(queryString);
 }
-titleSubmitButton.onclick = titleSearchFormSubmit
+titleSubmitButton.onclick = titleSearchFormSubmit()
