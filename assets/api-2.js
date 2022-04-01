@@ -17,7 +17,7 @@
 // }
 
 // function getParams() {
-    
+
 //     let searchParamsArr = document.location.search.split('=').pop();
 //     let titleInput = document.querySelector('#title').value;
 //     //let title = searchParamsArr.split('=').pop();
@@ -71,3 +71,21 @@
 //     location.assign(queryString);
 // }
 // genreSubmitButton.onclick = genreSearchFormSubmit
+
+
+// var titleForm = document.getElementById("title-search")
+// titleForm.addEventListener("click", function (event) {
+//     event.preventDefault()
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Host': 'data-imdb1.p.rapidapi.com',
+//             'X-RapidAPI-Key': '35ab0c20c2msh09b757063fe5943p1774f6jsn6adb7f071aa1'
+//         }
+//     };
+
+//     fetch('https://data-imdb1.p.rapidapi.com/titles/search/keyword/ironman?info=mini_info&limit=10&page=1&titleType=movie', options)
+//         .then(response => response.json())
+//         .then(response => console.log(response))
+//         .catch(err => console.error(err));
+// })
