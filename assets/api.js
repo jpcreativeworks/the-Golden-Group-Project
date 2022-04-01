@@ -16,10 +16,17 @@ titleSubmitButton.onclick = function () {
 	let titleInputVal = document.querySelector('#title').value;
 	console.log(titleInputVal);
 	let queryString = "./results.html?q=" + titleInputVal;
-	location.assign(queryString);
-	let titlePrint = localStorage.getItem("titleInfo", JSON.parse(responseTitle));
-	console.log(responseTitle)
-	 localStorage.setItem("titleInfo", titleInputVal);
+	
+	let titlePrint = JSON.parse(localStorage.getItem("titleInfo"));
+	if (titlePrint) {
+		for (i = 0; i < titlePrint.length; i++) {
+			searches.push(titlePrint[i]);
+	 		
+		}
+	}
+	searches.push(titleInputVal);
+	 localStorage.setItem("titleInfo",JSON.stringify(searches));
+	 location.assign(queryString);
 
 }
 
@@ -58,8 +65,10 @@ function recentSearchFunc() {
 		for (i = 0; i < recentSearchesPull.length; i++) {
 			searches.push(recentSearchesPull[i]);
 	 		
-		} recentSearches.append(searches)
+		}
+		recentSearches.textContent = searches;
 	}
 }
+
 
 getTitleInfo()
