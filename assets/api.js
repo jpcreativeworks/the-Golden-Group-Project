@@ -29,7 +29,7 @@ function getTitleInfo() {
 	// 
 	
 	// 
-	recentSearchFunc()
+	//recentSearchFunc()
 	let titleSearch = document.location.search.split('=').pop();
 	let titleUrl = 'https://www.omdbapi.com/?t=' + titleSearch + "&apikey=7ffe113a";
 	{
