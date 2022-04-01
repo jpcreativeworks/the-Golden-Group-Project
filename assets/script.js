@@ -18,34 +18,3 @@ function titleSearchFormSubmit(event) {
   location.assign(queryString);
 }
 titleSubmitButton.onclick = titleSearchFormSubmit
-
-function actorSearchFormSubmit(event) {
-  event.preventDefault();
-  let actorInputVal = document.querySelector('#actor').value;
-
-  let queryString = "./results.html?q=" + actorInputVal;
-
-  location.assign(queryString);
-}
-actorSubmitButton.onclick = actorSearchFormSubmit
-
-function ratingSearchFormSubmit(event) {
-  event.preventDefault();
-  let ratingInputVal = document.querySelector('#ratings').value;
-
-  let queryString = "./results.html?q=" + ratingInputVal;
-
-  location.assign(queryString);
-}
-ratingSubmitButton.onclick = ratingSearchFormSubmit
-
-function genreSearchFormSubmit(event) {
-  event.preventDefault();
-  let genreInputVal = document.querySelector('#genre').value;
-
-  let queryString = "./results.html?q=" + genreInputVal;
-
-  location.assign(queryString);
-}
-genreSubmitButton.onclick = genreSearchFormSubmit
-
